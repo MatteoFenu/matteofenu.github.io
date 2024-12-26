@@ -5,22 +5,22 @@ function HeroSection() {
     {
       firstRow: "Hey, welcome! I'm",
       secondRow: 'Based in Sardinia 🏝️',
-      flag: 'src/assets/flags/gb.png',
+      flag: 'flags/gb.png',
     },
     {
       firstRow: 'Hey, benvenuto! Sono',
       secondRow: 'Vivo in Sardegna 🏝️',
-      flag: 'src/assets/flags/it.png',
+      flag: '/flags/it.png',
     },
     {
       firstRow: '¡Hola, bienvenidos! Soy',
       secondRow: 'Basado en Cerdeña 🏝️',
-      flag: 'src/assets/flags/es.png',
+      flag: '/flags/es.png',
     },
     {
       firstRow: 'Salut, bienvenue! Je suis',
       secondRow: 'Basé en Sardaigne 🏝️',
-      flag: 'src/assets/flags/fr.png',
+      flag: '/flags/fr.png',
     },
   ];
 
@@ -52,13 +52,13 @@ function HeroSection() {
           <div className='flex flex-row items-center justify-center space-x-10 lg:mt-20 mt-5'>
             <a href='https://github.com/MatteoFenu' target='_blank'>
               <div className='rounded-full bg-white'>
-                <img src='src/assets/github.png' alt='github icon' className='w-[clamp(3rem,5vw,5rem)] h-[clamp(3rem,5vw,5rem)]' />
+                <img src='/github.png' alt='github icon' className='w-[clamp(3rem,5vw,5rem)] h-[clamp(3rem,5vw,5rem)]' />
               </div>
             </a>
 
             <a href='https://www.linkedin.com/in/matteo-fenu/' target='_blank'>
               <div className='rounded-full bg-white p-3'>
-                <img src='src/assets/linkedin.png' alt='linkedin icon' className='w-[clamp(1.5rem,3.34vw,3.5rem)] h-[clamp(1.5rem,3.34vw,3.5rem)]' />
+                <img src='/linkedin.png' alt='linkedin icon' className='w-[clamp(1.5rem,3.34vw,3.5rem)] h-[clamp(1.5rem,3.34vw,3.5rem)]' />
               </div>
             </a>
 
@@ -75,7 +75,7 @@ function HeroSection() {
           </div>
         </div>
         <div className='w-[clamp(12rem,20vw,50rem)] flex justify-end'>
-          <img src='src/assets/matteo-fenu-portrait.svg' alt='portrait' />
+          <img src='/matteo-fenu-portrait.svg' alt='portrait' />
         </div>
       </div>
     </section>
