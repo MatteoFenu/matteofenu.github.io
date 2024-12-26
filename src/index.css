@@ -16,3 +16,10 @@
 body {
   @apply bg-black text-white;
 }
+
+body,
+html,
+#root {
+  margin: 0 !important;
+  padding: 0 !important;
+}

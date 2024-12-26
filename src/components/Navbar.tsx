@@ -28,8 +28,8 @@ function Navbar() {
   ];
 
   return (
-    <nav className='fixed top-0 left-0 right-0 flex justify-between mt-10 sm:mx-28 mx-12'>
-      <img src='src/assets/MF.svg' className='logo' alt='logo' />
+    <nav className='sticky top-0 left-0 right-0 flex justify-between mt-10 md:mx-28 mx-12'>
+      <img src='/MF.svg' alt='logo' />
 
       <div className={`absolute top-full w-full sm:w-auto sm:relative p-3`}>
         <div className='hidden sm:block absolute inset-0 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg'></div>
