@@ -36,7 +36,7 @@ function Navbar() {
         <ul
           className={`relative sm:static flex items-center flex-col space-y-4 sm:space-y-0 sm:space-x-8 sm:flex-row bg-white sm:bg-transparent text-black sm:text-inherit text-xl 
                       py-3 sm:py-0 text-center sm:px-0 rounded-xl sm:rounded-none transition-all duration-300 
-                      ${isMobileMenuOpen && 'hidden sm:flex'} list-style`}>
+                      ${!isMobileMenuOpen && 'hidden sm:flex'} list-style`}>
           {menuItems.map(({ href, label, iconPath }) => (
             <li key={href} className='relative flex items-center space-x-2'>
               <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='size-6'>
