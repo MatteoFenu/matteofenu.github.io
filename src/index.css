@@ -14,12 +14,15 @@
 }
 
 body {
-  @apply bg-black text-white;
+  @apply text-white;
 }
 
-body,
-html,
-#root {
-  margin: 0 !important;
-  padding: 0 !important;
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('./background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
