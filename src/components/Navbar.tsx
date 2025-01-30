@@ -4,7 +4,7 @@ import './Navbar.css';
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const menuItems = [
     {
@@ -20,7 +20,7 @@ function Navbar() {
         'M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z',
     },
     {
-      href: '#resume',
+      href: 'https://drive.google.com/file/d/1EQgQTYRKKVlRtwj0qU4izGULq9XSc6Kr/view?usp=sharing',
       label: 'Resume',
       iconPath:
         'M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z',
@@ -28,7 +28,79 @@ function Navbar() {
   ];
 
   return (
-    <nav className='sticky top-0 left-0 right-0 flex justify-between mt-10 md:mx-28 mx-12'>
+    <nav className='sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80'>
+      <div className='md:mx-28 mx-12 relative lg:text-sm'>
+        <div className='flex justify-between items-center'>
+          <div className='flex items-center flex-shrink-0'>
+            <img className='h-10 w-10 mr-2' src={'/MF.svg'} alt='Logo' />
+          </div>
+          <div className='relative px-5'>
+            <div className='hidden sm:block absolute inset-0 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg'></div>
+            <ul className='relative hidden lg:flex space-x-12 z-10 text-xl list-style'>
+              {menuItems.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    onClick={toggleMobileMenu}
+                    target={item.href.startsWith('http') ? '_blank' : '_self'}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className='lg:hidden relative'>
+            <div className='absolute inset-0 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg -z-10'></div>
+
+            <button onClick={toggleMobileMenu} aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}>
+              {isMobileMenuOpen ? (
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  strokeWidth={1.5}
+                  stroke='currentColor'
+                  className='size-16 relative py-3 text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900'>
+                  <path strokeLinecap='round' strokeLinejoin='round' d='M6 18 18 6M6 6l12 12' />
+                </svg>
+              ) : (
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  strokeWidth={1.5}
+                  stroke='currentColor'
+                  className='size-16 relative py-3 text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900'>
+                  <path strokeLinecap='round' strokeLinejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5' />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {isMobileMenuOpen && (
+          <div className='fixed right-0 z-20 bg-neutral-900 w-full p-3 flex flex-col justify-center items-center lg:hidden'>
+            <ul className='flex flex-col'>
+              {menuItems.map((item) => (
+                <li key={item.href} className='py-4 self-center'>
+                  <a
+                    href={item.href}
+                    onClick={toggleMobileMenu}
+                    target={item.href.startsWith('http') ? '_blank' : '_self'}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </nav>
+
+    /*  <nav className='sticky top-0 left-0 right-0 flex justify-between mt-10 md:mx-28 mx-12'>
       <img src='/MF.svg' alt='logo' />
 
       <div className={`absolute top-full w-full sm:w-auto sm:relative p-3`}>
@@ -61,6 +133,7 @@ function Navbar() {
         </svg>
       </div>
     </nav>
+    */
   );
 }
 
