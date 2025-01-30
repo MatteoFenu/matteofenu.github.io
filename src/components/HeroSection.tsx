@@ -77,7 +77,7 @@ function HeroSection() {
           </div>
         </div>
         <div className='w-[clamp(12rem,20vw,50rem)] flex justify-end'>
-          <img src='/matteo-fenu-portrait.svg' alt='portrait' />
+          <img src='/matteo-fenu-portrait.svg' alt='Matteo Fenu - Software Developer Portrait' />
         </div>
       </div>
     </section>
