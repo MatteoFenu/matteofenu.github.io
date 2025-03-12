@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import './custom-swiper.css';
 
-const videoUrls = ['projects/sco-bar-conad.mkv', 'projects/sco-mondadori.mkv'];
+const videoUrls = ['projects/sco-bar-conad.mp4', 'projects/sco-mondadori.mp4'];
 
 function ProjectsSection() {
   return (
